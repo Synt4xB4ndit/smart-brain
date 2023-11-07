@@ -118,7 +118,7 @@ class App extends Component {
     this.setState({ imageUrl: this.state.input })
     // Moved To Backend
     //fetch("https://api.clarifai.com/v2/models/" + 'face-detection' + "/outputs", returnClarifaiJSON(this.state.input))
-    fetch('http://localhost:3000/imageUrl', {
+    fetch('https://smart-brain-backend-mjlw.onrender.com/imageUrl', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -128,7 +128,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', {
+          fetch('https://smart-brain-backend-mjlw.onrender.com/image', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
